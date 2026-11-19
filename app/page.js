@@ -1,11 +1,6 @@
 import Image from "next/image";
 
 ﻿export default function HomePage() {
-  const metrics = [
-    { value: "6", label: "Signal domains" },
-    { value: "2", label: "Core classes of intelligence" },
-    { value: "∞", label: "Meaningful measurements" },
-  ];
 
   const pillars = [
     { name: "Molecular", text: "Chemical and material behaviour captured through light-based interaction and spectral analysis." },
@@ -228,13 +223,52 @@ import Image from "next/image";
         .tech-card {
           position: relative;
           overflow: hidden;
+          flex: 0 0 calc((100% - 72px) / 5);
+          min-width: 210px;
+          scroll-snap-align: start;
           transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pillars-track,
+        .technology-track {
+          display: flex;
+          gap: 18px;
+          overflow-x: auto;
+          padding: 4px 2px 18px;
+          scroll-snap-type: x mandatory;
+          overscroll-behavior-x: contain;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(5, 208, 224, 0.45) transparent;
+        }
+
+        .pillar-card {
+          flex: 0 0 calc((100% - 90px) / 6);
+          min-width: 180px;
+          scroll-snap-align: start;
+          transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pillar-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(5, 208, 224, 0.42) !important;
+          box-shadow: 0 18px 36px rgba(6, 20, 31, 0.1);
         }
 
         .tech-card:hover {
           transform: translateY(-4px);
           border-color: rgba(74, 214, 202, 0.4);
           box-shadow: 0 20px 35px rgba(6, 20, 31, 0.12);
+        }
+
+        .pillars-track::-webkit-scrollbar,
+        .technology-track::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .pillars-track::-webkit-scrollbar-thumb,
+        .technology-track::-webkit-scrollbar-thumb {
+          border-radius: 999px;
+          background: rgba(5, 208, 224, 0.45);
         }
 
         .founder-card,
@@ -417,15 +451,6 @@ import Image from "next/image";
                   Talk to us
                 </a>
               </div>
-
-              <div style={{ display: "flex", gap: 26, flexWrap: "wrap", marginTop: 38 }}>
-                {metrics.map((stat) => (
-                  <div key={stat.label}>
-                    <div style={{ fontSize: 26, fontWeight: 800, color: "#05d0e0" }}>{stat.value}</div>
-                    <div style={{ fontSize: 10, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(255,255,255,.48)" }}>{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div style={{ position: "relative" }}>
@@ -542,13 +567,13 @@ import Image from "next/image";
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 18 }}>
+          <div className="pillars-track" role="list" aria-label="Six layers of intelligence" tabIndex={0}>
             {pillars.map((pillar) => (
-              <div key={pillar.name} style={{ background: "#fff", border: "1px solid #dfeaf2", borderRadius: 22, padding: "24px 18px", boxShadow: "0 16px 30px rgba(17,34,57,0.03)" }}>
+              <article key={pillar.name} role="listitem" className="pillar-card" style={{ background: "#fff", border: "1px solid #dfeaf2", borderRadius: 22, padding: "24px 18px", boxShadow: "0 16px 30px rgba(17,34,57,0.03)" }}>
                 <div style={{ width: 42, height: 42, borderRadius: 12, background: "linear-gradient(135deg, rgba(74,214,202,0.18), rgba(58,164,211,0.16))", display: "flex", alignItems: "center", justifyContent: "center", color: "#0d5b61", fontWeight: 800, marginBottom: 16 }}>{pillar.name.slice(0, 1)}</div>
                 <h3 style={{ margin: "0 0 10px", fontSize: 23, color: "#0b1d2d" }}>{pillar.name}</h3>
                 <p style={{ margin: 0, color: "#4f6273", lineHeight: 1.72, fontSize: 14 }}>{pillar.text}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -563,16 +588,16 @@ import Image from "next/image";
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: 18 }}>
+          <div className="technology-track" role="list" aria-label="Five sensing technologies" tabIndex={0}>
             {technologies.map((item) => (
-              <div key={item.title} className="tech-card" style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 24, padding: "24px 22px 24px 22px", background: "rgba(255,255,255,0.02)" }}>
+              <article key={item.title} role="listitem" className="tech-card" style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 24, padding: "24px 22px 24px 22px", background: "rgba(255,255,255,0.02)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
                   <span style={{ fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "#8fe9de", fontWeight: 800 }}>{item.id}</span>
                   <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, rgba(74,214,202,0.55), rgba(74,214,202,0.02))" }} />
                 </div>
                 <h3 style={{ margin: "0 0 12px", fontSize: 22, lineHeight: 1.3, color: "#f1f9fa" }}>{item.title}</h3>
                 <p style={{ margin: 0, color: "rgba(237,247,249,.7)", lineHeight: 1.8, fontSize: 15 }}>{item.text}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
