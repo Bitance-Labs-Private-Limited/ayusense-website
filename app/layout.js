@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AyuSense Innovations | Transforming Photonic Signals into Strategic Intelligence™",
+  title: "AyuSense Deeptech Private Limited | Photonics and AI",
   description:
-    "AyuSense Innovations builds photonic sensing, computational imaging, and AI-enabled intelligence systems for healthcare, industry, infrastructure, and defence.",
+    "AyuSense Deeptech Private Limited develops photonic sensing, computational imaging and AI-enabled intelligence for healthcare, industry and critical systems.",
   keywords: [
     "AyuSense",
     "Photonics",
@@ -22,32 +22,32 @@ export const metadata = {
     "Computational imaging",
     "Medical imaging",
     "Industrial monitoring",
-    "Infrastructure intelligence",
+    "Artificial Intelligence",
     "Signal analysis",
   ],
-  authors: [{ name: "AyuSense Innovations" }],
-  creator: "AyuSense Innovations",
-  publisher: "AyuSense Innovations",
+  authors: [{ name: "AyuSense Deeptech Private Limited" }],
+  creator: "AyuSense Deeptech Private Limited",
+  publisher: "AyuSense Deeptech Private Limited",
   metadataBase: new URL("https://ayusense.com"),
   openGraph: {
-    title: "AyuSense Innovations | Strategic Intelligence from Photonic Signals",
+    title: "AyuSense Deeptech Private Limited | Strategic Intelligence from Photonic Signals",
     description:
-      "We turn light, sound and vibration into actionable insight for critical systems in health, industry and infrastructure.",
+      "We turn light, sound and vibration into actionable insight for healthcare, industry and critical systems.",
     url: "https://ayusense.com",
-    siteName: "AyuSense Innovations",
+    siteName: "AyuSense Deeptech Private Limited",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AyuSense Innovations",
+    title: "AyuSense Deeptech Private Limited",
     description:
-      "Photonics-powered sensing and AI intelligence for healthcare, critical infrastructure and industrial systems.",
+      "Photonics-powered sensing and AI intelligence for healthcare and industry.",
   },
   icons: {
-    icon: "/LogoGloport.png",
-    shortcut: "/LogoGloport.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/image/ayusense-mark.png",
+    shortcut: "/image/ayusense-mark.png",
+    apple: "/image/ayusense-mark.png",
   },
 };
 
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen bg-white text-black flex flex-col">
         {/* Background Effects */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-red-500/10 blur-3xl rounded-full" />
+          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-3xl rounded-full" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full" />
         </div>
 
@@ -70,14 +70,12 @@ export default function RootLayout({ children }) {
         {/* Footer */}
         <footer className="border-t border-neutral-200 py-6 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
-            <p>
-              © {new Date().getFullYear()} AyuSense Innovations. All rights
-              reserved.
+            <p className="md:whitespace-nowrap">
+              © {new Date().getFullYear()} AyuSense Deeptech Private Limited. All rights reserved.
             </p>
 
-            <p className="max-w-2xl text-center md:text-right">
-              Transforming photonic signals into strategic intelligence for
-              healthcare, industrial systems, infrastructure and defence.
+            <p className="max-w-2xl text-center md:text-right md:whitespace-nowrap">
+              Photonic sensing and AI for healthcare, industry and critical systems.
             </p>
           </div>
         </footer>
