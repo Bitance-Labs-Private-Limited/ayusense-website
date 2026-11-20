@@ -64,6 +64,7 @@ import Image from "next/image";
       name: "Vidit Kumar",
       role: "Director",
       email: "vidit.kumar@ayusense.co.in",
+      image: "/image/vidit-kumar.jpeg",
       summary:
         "Technology entrepreneur with over 10 years of experience in AI, embedded systems, software, cybersecurity and deep-tech product development.",
       bio:
@@ -409,7 +410,7 @@ import Image from "next/image";
               />
               <div>
                 <div style={{ fontSize: 12, letterSpacing: ".18em", textTransform: "uppercase", color: "#88e0d5", fontWeight: 700 }}>AyuSense</div>
-                <div style={{ fontSize: 10, color: "rgba(255,255,255,.55)", letterSpacing: ".12em", textTransform: "uppercase" }}>Deeptech Private Limited</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,.55)", letterSpacing: ".12em", textTransform: "uppercase" }}>Deeptech</div>
               </div>
             </div>
 
